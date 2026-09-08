@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #F6F1E3;
+  color: #22281E;
+}
+
+/* visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #8C4A2F;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ledger-style thin rule, used instead of card borders/shadows */
+.ledger-rule {
+  border-top: 1px solid #D8CCA9;
+}
+
+.ledger-rule-b {
+  border-bottom: 1px solid #D8CCA9;
+}
+
+/* numbered orchard-journey marker (legit sequence) */
+.step-number {
+  font-family: var(--font-fraunces), serif;
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* accordion caret rotation */
+details[open] > summary .caret {
+  transform: rotate(45deg);
+}
+.caret {
+  transition: transform 200ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .caret { transition: none; }
+}
+
+/* leaf divider */
+.leaf-divider {
+  width: 22px;
+  height: 22px;
+  color: #A97C3E;
+}
+
+::selection {
+  background-color: #E4C793;
+  color: #22281E;
+}
